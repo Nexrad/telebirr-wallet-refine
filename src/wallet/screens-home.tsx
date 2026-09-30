@@ -55,7 +55,7 @@ export function HomeScreen({ nav }: { nav: Nav }) {
     <div className="relative flex h-full flex-col bg-tb-bg">
       <div className="bg-tb-green text-tb-surface"><StatusBar dark /></div>
       <BrandBar />
-      <div className="tb-waves relative shrink-0 bg-tb-green pb-7 text-tb-surface">
+      <div className="tb-waves relative shrink-0 bg-tb-green pb-10 text-tb-surface">
         <div className="flex items-center gap-2 px-4 pt-2">
           <User size={22} className="rounded-full" />
           <span className="font-hand flex-1 text-[20px]">Selam, nesredn</span>
@@ -113,7 +113,7 @@ export function HomeScreen({ nav }: { nav: Nav }) {
 
       {menu && (
         <div className="anim-fade absolute inset-0 z-20 bg-tb-overlay" onClick={() => setMenu(false)}>
-          <div className="anim-pop absolute left-[14px] top-[340px] w-[190px] overflow-hidden rounded-md bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
+          <div className="anim-pop absolute left-[14px] top-[352px] w-[190px] overflow-hidden rounded-md bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
             <button onClick={() => { setMenu(false); nav.push({ name: "individual" }); }} className="tap font-hand flex w-full items-center gap-3 border-b border-tb-line px-4 py-3 text-left text-[27px] text-tb-text">
               <Contact size={26} className="text-tb-green" /> To Individual
             </button>

@@ -3,8 +3,8 @@
     "capability": "code",
     "source": "github:nex-rad/github-connector",
     "outcome": "preserve and refine existing simulated wallet",
-    "status": "pending",
-    "next_action": "import and visually refine"
+    "status": "verified",
+    "next_action": null
   },
   {
     "capability": "schema",
@@ -94,7 +94,7 @@
     "capability": "verification",
     "source": "github:nex-rad/github-connector",
     "outcome": "no production capability detected in source",
-    "status": "pending",
-    "next_action": "verify flows"
+    "status": "verified",
+    "next_action": null
   }
 ]
