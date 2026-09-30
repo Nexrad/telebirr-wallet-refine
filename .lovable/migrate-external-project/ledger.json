@@ -1,0 +1,100 @@
+[
+  {
+    "capability": "code",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "preserve and refine existing simulated wallet",
+    "status": "verified",
+    "next_action": null
+  },
+  {
+    "capability": "schema",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "records",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "auth identities",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "authorization",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "uploaded file bytes",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "external providers",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "public endpoints",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "callbacks",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "webhooks",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "schedules",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "secrets",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "cutover",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "not applicable",
+    "next_action": null
+  },
+  {
+    "capability": "verification",
+    "source": "github:nex-rad/github-connector",
+    "outcome": "no production capability detected in source",
+    "status": "verified",
+    "next_action": null
+  }
+]
