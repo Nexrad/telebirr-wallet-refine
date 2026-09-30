@@ -1,8 +1,8 @@
 import { ArrowLeft, BatteryFull, Delete, Signal, Wifi } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import ethioLogo from "@/assets/ethio-logo.png.asset.json";
-import telebirrLogo from "@/assets/telebirr-logo.png.asset.json";
-import zemenBanner from "@/assets/zemen-banner.png.asset.json";
+import ethioLogo from "@/assets/ethio-ref.png.asset.json";
+import telebirrLogo from "@/assets/telebirr-ref.png.asset.json";
+import zemenBanner from "@/assets/zemen-success-banner.jpg.asset.json";
 
 export function StatusBar({ dark = false }: { dark?: boolean }) {
   const [t, setT] = useState("");
@@ -28,8 +28,8 @@ export function StatusBar({ dark = false }: { dark?: boolean }) {
 export function BrandBar() {
   return (
     <div className="flex h-[42px] shrink-0 items-center justify-between bg-tb-surface px-3">
-      <img src={ethioLogo.url} alt="ethio telecom" className="h-[30px] w-auto object-contain" />
-      <img src={telebirrLogo.url} alt="telebirr" className="h-[27px] w-auto object-contain" />
+      <img src={ethioLogo.url} alt="ethio telecom" className="h-[28px] w-auto object-contain" />
+      <img src={telebirrLogo.url} alt="telebirr" className="h-[26px] w-auto object-contain" />
     </div>
   );
 }
@@ -48,7 +48,7 @@ export function TopBar({ title, onBack, right }: { title: string; onBack: () => 
 
 export function Banner({ className = "" }: { className?: string }) {
   return (
-    <img src={zemenBanner.url} alt="Zemen Gebeya — Where Ethiopia Shops Digitally" className={`block aspect-[645/198] w-full rounded-[8px] object-cover ${className}`} />
+    <img src={zemenBanner.url} alt="Zemen Gebeya — Where Ethiopia Shops Digitally" className={`block aspect-[560/165] w-full rounded-[8px] object-cover ${className}`} />
   );
 }
 

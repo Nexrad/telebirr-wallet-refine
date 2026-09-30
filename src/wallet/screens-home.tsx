@@ -8,6 +8,12 @@ import { BrandBar, Banner, StatusBar } from "./ui";
 import { fmt, useWallet } from "./store";
 import type { Nav } from "./WalletApp";
 import zemenMark from "@/assets/zemen-mark.png.asset.json";
+import sendIcon from "@/assets/send-ref.png.asset.json";
+import cashIcon from "@/assets/cash-ref.png.asset.json";
+import dashenIcon from "@/assets/dashen-ref.png.asset.json";
+import cbeIcon from "@/assets/cbe-ref.png.asset.json";
+import awashIcon from "@/assets/awash-ref.png.asset.json";
+import zemenIcon from "@/assets/zemen-ref.png.asset.json";
 
 export function BottomNav({ nav, active }: { nav: Nav; active: string }) {
   const items = [
@@ -32,10 +38,10 @@ export function BottomNav({ nav, active }: { nav: Nav; active: string }) {
 
 function Tile({ label, icon, badge, onClick }: { label: string; icon: React.ReactNode; badge?: string; onClick?: () => void }) {
   return (
-    <button onClick={onClick} className="tap relative flex h-[102px] min-w-0 flex-col items-center justify-start gap-3 rounded-[8px] bg-tb-surface px-1 pt-3 text-center">
+    <button onClick={onClick} className="tap relative flex h-[102px] min-w-0 flex-col items-center justify-start gap-2 rounded-[8px] bg-tb-surface px-1 pt-3 text-center">
       {badge && <span className="absolute -top-2 rounded-sm bg-tb-orange px-1 text-[9px] font-bold text-tb-surface">{badge}</span>}
       <div className="flex h-7 shrink-0 items-center text-tb-green">{icon}</div>
-      <span className="whitespace-pre-line text-[12px] leading-[16px] text-tb-text">{label}</span>
+      <span className="whitespace-pre-line text-[12px] leading-[15px] text-tb-text">{label}</span>
     </button>
   );
 }
@@ -68,23 +74,20 @@ export function HomeScreen({ nav }: { nav: Nav }) {
         <div className="font-hand absolute inset-x-0 bottom-0 h-4 rounded-t-[30px] bg-tb-orange text-center text-[14px] font-bold leading-4">ONE APP FOR ALL YOUR NEEDS!</div>
       </div>
 
-      <div className="no-scrollbar flex-1 overflow-y-auto px-3 pb-24 pt-5">
+      <div className="no-scrollbar flex-1 overflow-y-auto px-3 pb-24 pt-6">
         <div className="grid grid-cols-4 gap-x-2 gap-y-5">
-          <Tile label="Send Money" icon={<Wallet size={22} />} onClick={() => setMenu(true)} />
-          <Tile label="Cash In/ Out" icon={<HandCoins size={22} />} onClick={svc("Cash In / Out")} />
+          <Tile label={"Send\nMoney"} icon={<img src={sendIcon.url} alt="" className="h-6 w-6 object-contain" />} onClick={() => setMenu(true)} />
+          <Tile label={"Cash In/\nOut"} icon={<img src={cashIcon.url} alt="" className="h-6 w-6 object-contain" />} onClick={svc("Cash In / Out")} />
           <Tile label="Airtime/Buy Package" badge="Up to 35%" icon={<Gift size={22} />} onClick={svc("Airtime / Buy Package")} />
-          <Tile label={"Zemen\nGEBEYA"} icon={<img src={zemenMark.url} alt="" className="h-7 w-7 rounded-full object-cover" />} onClick={svc("Zemen GEBEYA")} />
-          <Tile label={"Financial\nService\nWith Dashen"} icon={<Landmark size={20} className="text-tb-blue" />} onClick={svc("Dashen Bank")} />
-          <Tile label={"Financial\nService\nWith CBE"} icon={<Landmark size={20} className="text-tb-orange" />} onClick={svc("CBE")} />
+          <Tile label={"Zemen\nGEBEYA"} icon={<img src={zemenIcon.url} alt="" className="h-7 w-7 rounded-full object-cover" />} onClick={svc("Zemen GEBEYA")} />
+          <Tile label={"Financial\nService\nWith\nDashen"} icon={<img src={dashenIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("Dashen Bank")} />
+          <Tile label={"Financial\nService\nWith CBE"} icon={<img src={cbeIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("CBE")} />
           <Tile label={"Financial\nService with\nSiinqee"} icon={<span className="text-[10px] font-bold text-tb-green-dark">Siinqee</span>} onClick={svc("Siinqee Bank")} />
           <Tile label={"Transfer to\nBank"} icon={<Landmark size={22} />} onClick={svc("Transfer to Bank")} />
         </div>
         <Banner className="mt-4" />
-        <button onClick={() => nav.push({ name: "history" })} className="tap mt-3 flex w-full items-center justify-end gap-1 text-[12px] font-semibold text-tb-blue">
-          Transaction Details <ChevronRight size={16} />
-        </button>
         <div className="mt-2 grid grid-cols-4 gap-2.5">
-          <Tile label="Financial Service with Awash" icon={<Landmark size={20} className="text-tb-orange" />} onClick={svc("Awash Bank")} />
+          <Tile label={"Financial\nService with\nAwash"} icon={<img src={awashIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("Awash Bank")} />
           <Tile label="Pay for Merchant" icon={<Store size={22} />} onClick={svc("Pay for Merchant")} />
           <Tile label="teleEV Charging" icon={<Zap size={22} />} onClick={svc("teleEV Charging")} />
           <Tile label="TOLO Payment" icon={<Car size={22} className="text-tb-orange" />} onClick={svc("TOLO Payment")} />
@@ -93,10 +96,13 @@ export function HomeScreen({ nav }: { nav: Nav }) {
           <Tile label="tele Device Financing" icon={<Smartphone size={22} />} onClick={svc("tele Device Financing")} />
           <Tile label="More" icon={<PlusCircle size={22} />} onClick={() => nav.root("apps")} />
         </div>
+        <button onClick={() => nav.push({ name: "history" })} className="tap mt-3 flex w-full items-center justify-end gap-1 text-[12px] font-semibold text-tb-blue">
+          Transaction Details <ChevronRight size={16} />
+        </button>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[60px] flex justify-center">
-        <button onClick={svc("Scan QR")} className="tap pointer-events-auto flex h-9 w-[250px] items-center justify-center gap-2 rounded-md bg-tb-blue text-[14px] font-semibold text-tb-surface shadow-md">
+      <div className="pointer-events-none absolute inset-x-0 bottom-[76px] flex justify-center">
+        <button onClick={svc("Scan QR")} className="tap pointer-events-auto flex h-10 w-[80%] items-center justify-center gap-2 rounded-md bg-tb-blue text-[14px] font-semibold text-tb-surface shadow-md">
           <ScanLine size={18} /> Scan QR
         </button>
       </div>
@@ -107,12 +113,12 @@ export function HomeScreen({ nav }: { nav: Nav }) {
 
       {menu && (
         <div className="anim-fade absolute inset-0 z-20 bg-tb-overlay" onClick={() => setMenu(false)}>
-          <div className="anim-pop absolute left-[14px] top-[340px] w-[128px] overflow-hidden rounded-md bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => { setMenu(false); nav.push({ name: "individual" }); }} className="tap flex w-full items-center gap-3 border-b border-tb-line px-3 py-3 text-left text-[12px] text-tb-text">
-              <Contact size={20} className="text-tb-green" /> To Individual
+          <div className="anim-pop absolute left-[14px] top-[340px] w-[190px] overflow-hidden rounded-md bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => { setMenu(false); nav.push({ name: "individual" }); }} className="tap font-hand flex w-full items-center gap-3 border-b border-tb-line px-4 py-3 text-left text-[27px] text-tb-text">
+              <Contact size={26} className="text-tb-green" /> To Individual
             </button>
-            <button onClick={() => { setMenu(false); nav.push({ name: "service", title: "Send Money to Group" }); }} className="tap flex w-full items-center gap-3 px-3 py-3 text-left text-[12px] text-tb-text">
-              <Users size={20} className="text-tb-green" /> To Group
+            <button onClick={() => { setMenu(false); nav.push({ name: "service", title: "Send Money to Group" }); }} className="tap font-hand flex w-full items-center gap-3 px-4 py-3 text-left text-[27px] text-tb-text">
+              <Users size={26} className="text-tb-green" /> To Group
             </button>
           </div>
         </div>
