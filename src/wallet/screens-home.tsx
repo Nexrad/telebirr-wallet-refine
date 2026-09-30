@@ -36,9 +36,9 @@ export function BottomNav({ nav, active }: { nav: Nav; active: string }) {
   );
 }
 
-function Tile({ label, icon, badge, onClick }: { label: string; icon: React.ReactNode; badge?: string; onClick?: () => void }) {
+function Tile({ label, icon, badge, onClick, tall = false }: { label: string; icon: React.ReactNode; badge?: string; onClick?: () => void; tall?: boolean }) {
   return (
-    <button onClick={onClick} className="tap relative flex h-[102px] min-w-0 flex-col items-center justify-start gap-2 rounded-[8px] bg-tb-surface px-1 pt-3 text-center">
+    <button onClick={onClick} className={`tap relative flex min-w-0 flex-col items-center justify-start gap-2 rounded-[8px] bg-tb-surface px-1 pt-3 text-center ${tall ? "h-[134px]" : "h-[102px]"}`}>
       {badge && <span className="absolute -top-2 rounded-sm bg-tb-orange px-1 text-[9px] font-bold text-tb-surface">{badge}</span>}
       <div className="flex h-7 shrink-0 items-center text-tb-green">{icon}</div>
       <span className="whitespace-pre-line text-[12px] leading-[15px] text-tb-text">{label}</span>
@@ -80,10 +80,10 @@ export function HomeScreen({ nav }: { nav: Nav }) {
           <Tile label={"Cash In/\nOut"} icon={<img src={cashIcon.url} alt="" className="h-6 w-6 object-contain" />} onClick={svc("Cash In / Out")} />
           <Tile label="Airtime/Buy Package" badge="Up to 35%" icon={<Gift size={22} />} onClick={svc("Airtime / Buy Package")} />
           <Tile label={"Zemen\nGEBEYA"} icon={<img src={zemenIcon.url} alt="" className="h-7 w-7 rounded-full object-cover" />} onClick={svc("Zemen GEBEYA")} />
-          <Tile label={"Financial\nService\nWith\nDashen"} icon={<img src={dashenIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("Dashen Bank")} />
-          <Tile label={"Financial\nService\nWith CBE"} icon={<img src={cbeIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("CBE")} />
-          <Tile label={"Financial\nService with\nSiinqee"} icon={<span className="text-[10px] font-bold text-tb-green-dark">Siinqee</span>} onClick={svc("Siinqee Bank")} />
-          <Tile label={"Transfer to\nBank"} icon={<Landmark size={22} />} onClick={svc("Transfer to Bank")} />
+          <Tile tall label={"Financial\nService\nWith\nDashen"} icon={<img src={dashenIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("Dashen Bank")} />
+          <Tile tall label={"Financial\nService\nWith CBE"} icon={<img src={cbeIcon.url} alt="" className="h-7 w-7 object-contain" />} onClick={svc("CBE")} />
+          <Tile tall label={"Financial\nService with\nSiinqee"} icon={<span className="text-[10px] font-bold text-tb-green-dark">Siinqee</span>} onClick={svc("Siinqee Bank")} />
+          <Tile tall label={"Transfer to\nBank"} icon={<Landmark size={22} />} onClick={svc("Transfer to Bank")} />
         </div>
         <Banner className="mt-4" />
         <div className="mt-2 grid grid-cols-4 gap-2.5">

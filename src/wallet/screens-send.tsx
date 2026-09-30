@@ -217,8 +217,8 @@ export function ReceiptScreen({ nav, tx, fromHistory }: { nav: Nav; tx: Tx; from
           <div className="anim-pop flex h-[51px] w-[51px] items-center justify-center rounded-full bg-tb-green"><Check size={34} strokeWidth={3} className="text-tb-surface" /></div>
           <div className="mt-1 text-[24px] leading-7 text-tb-green-dark">Successful</div>
         </div>
-        <div className="mt-[86px] text-center text-[40px] leading-[48px] font-semibold text-tb-text">-{fmt(tx.total)} <span className="text-[19px] font-normal">(ETB)</span></div>
-        <div className="mx-5 mt-[46px] space-y-2 border-t border-tb-line pt-2 text-[20px] leading-[25px]">
+        <div className="mt-[75px] text-center text-[40px] leading-[48px] font-semibold text-tb-text">-{fmt(tx.total)} <span className="text-[19px] font-normal">(ETB)</span></div>
+        <div className="mx-5 mt-[40px] space-y-2 border-t border-tb-line pt-2 text-[20px] leading-[25px]">
           <ReceiptRow label="Transaction Time:" value={tx.time} />
           <ReceiptRow label="Transaction Type:" value={tx.type} />
           <ReceiptRow label="Transaction To:" value={tx.to} />
