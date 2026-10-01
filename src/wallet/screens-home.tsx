@@ -1,19 +1,32 @@
 import {
   Bell, Search, Eye, EyeOff, ChevronDown, User, Wallet, HandCoins, Gift, Landmark, ScanLine, MapPin,
-  Home as HomeIc, CreditCard, LayoutGrid, MessageCircle, UserRound, ChevronRight, Contact, Users,
+  Home as HomeIc, CreditCard, LayoutGrid, MessageCircle, UserRound, ChevronRight,
   Zap, Car, ParkingCircle, Smartphone, PlusCircle, Store,
 } from "lucide-react";
 import { useState } from "react";
 import { BrandBar, Banner, StatusBar } from "./ui";
 import { fmt, useWallet } from "./store";
 import type { Nav } from "./WalletApp";
-import zemenMark from "@/assets/zemen-mark.png.asset.json";
 import sendIcon from "@/assets/send-ref.png.asset.json";
 import cashIcon from "@/assets/cash-ref.png.asset.json";
 import dashenIcon from "@/assets/dashen-ref.png.asset.json";
 import cbeIcon from "@/assets/cbe-ref.png.asset.json";
 import awashIcon from "@/assets/awash-ref.png.asset.json";
 import zemenIcon from "@/assets/zemen-ref.png.asset.json";
+
+function SendOptionIcon({ group = false }: { group?: boolean }) {
+  return (
+    <svg width="30" height="30" viewBox="0 0 36 36" fill="none" aria-hidden="true" className="shrink-0 text-tb-green-dark">
+      <path d="M18 2v12m-5-7 5-5 5 5M8 15h20m-23 4v13h26V19H5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" strokeLinecap="round" />
+      <path d="M8 19h20v10H8z" stroke="currentColor" strokeWidth="1.3" />
+      {group ? (
+        <><circle cx="15" cy="24" r="2" fill="currentColor" /><circle cx="21" cy="24" r="2" fill="currentColor" /><path d="M11 30c0-3 2-4 4-4s4 1 4 4m-1 0c0-3 2-4 4-4s4 1 4 4" stroke="currentColor" strokeWidth="1.5" /></>
+      ) : (
+        <><circle cx="18" cy="23" r="2.5" fill="currentColor" /><path d="M12 30c0-3.5 2.5-5 6-5s6 1.5 6 5" stroke="currentColor" strokeWidth="1.5" /></>
+      )}
+    </svg>
+  );
+}
 
 export function BottomNav({ nav, active }: { nav: Nav; active: string }) {
   const items = [
@@ -113,12 +126,12 @@ export function HomeScreen({ nav }: { nav: Nav }) {
 
       {menu && (
         <div className="anim-fade absolute inset-0 z-20 bg-tb-overlay" onClick={() => setMenu(false)}>
-          <div className="anim-pop absolute left-[14px] top-[352px] w-[190px] overflow-hidden rounded-md bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => { setMenu(false); nav.push({ name: "individual" }); }} className="tap font-hand flex w-full items-center gap-3 border-b border-tb-line px-4 py-3 text-left text-[27px] text-tb-text">
-              <Contact size={26} className="text-tb-green" /> To Individual
+          <div className="anim-pop absolute left-[14px] top-[352px] w-[180px] overflow-hidden rounded-[8px] bg-tb-surface shadow-lg" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => { setMenu(false); nav.push({ name: "individual" }); }} className="tap flex h-[66px] w-full items-center gap-2.5 border-b border-tb-line px-3 text-left text-[18px] text-tb-text">
+              <SendOptionIcon /> <span className="whitespace-nowrap">To Individual</span>
             </button>
-            <button onClick={() => { setMenu(false); nav.push({ name: "service", title: "Send Money to Group" }); }} className="tap font-hand flex w-full items-center gap-3 px-4 py-3 text-left text-[27px] text-tb-text">
-              <Users size={26} className="text-tb-green" /> To Group
+            <button onClick={() => { setMenu(false); nav.push({ name: "service", title: "Send Money to Group" }); }} className="tap flex h-[66px] w-full items-center gap-2.5 px-3 text-left text-[18px] text-tb-text">
+              <SendOptionIcon group /> <span className="whitespace-nowrap">To Group</span>
             </button>
           </div>
         </div>
