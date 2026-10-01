@@ -7,7 +7,6 @@ import { useState } from "react";
 import { BrandBar, Banner, StatusBar } from "./ui";
 import { fmt, useWallet } from "./store";
 import type { Nav } from "./WalletApp";
-import zemenMark from "@/assets/zemen-mark.png.asset.json";
 import sendIcon from "@/assets/send-ref.png.asset.json";
 import cashIcon from "@/assets/cash-ref.png.asset.json";
 import dashenIcon from "@/assets/dashen-ref.png.asset.json";
